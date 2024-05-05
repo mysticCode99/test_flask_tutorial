@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row no-gutters">
+        <div class="col-md-4 col-lg-4">
+            <img width="450" src="{{ url_for('static', filename='profile_pic.jpg') }}">
+        </div>
+        <div class="col-md-8 col-lg-8">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white">
+                    <h3 class="display-5">{{ fst_name }} {{ snd_name}}</h3>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-google"></i>
+                    <i class="fa fa-youtube-play"></i>
+                    <i class="fa fa-dribbble"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="p-3 bg-black text-white">
+                    <h6>Python Developer</h6>
+                </div>
+                <div class="d-flex flex-row text-white">
+                    <div class="p-3 mb-2 bg-primary text-white">
+                        <h4>90%</h4>
+                        <h6>Python</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        <h4>80%</h4>
+                        <h6>Linux</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-success text-white">
+                        <h4>70%</h4>
+                        <h6>Csh</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-danger text-white">
+                        <h4>60%</h4>
+                        <h6>Perl</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-warning text-dark">
+                        <h4>50%</h4>
+                        <h6>CSS</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-info text-white">
+                        <h4>40%</h4>
+                        <h6>HTML</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-light text-dark">
+                        <h4>30%</h4>
+                        <h6>JavaScript</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-dark text-white">
+                        <h4>20%</h4>
+                        <h6>PHP</h6>
+                    </div>
+                    <div class="p-3 mb-2 bg-white text-dark">
+                        <h4>10%</h4>
+                        <h6>Bootstrap</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

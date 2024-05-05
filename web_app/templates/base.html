@@ -1,0 +1,27 @@
+{% import 'common_maros.j2' as common %}
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  {% include 'header.j2' %}
+  <body class="d-flex align-items-center py-4">
+
+    <div class="container">
+      <div class="col">
+        
+        <div class="row">
+          <header class="d-flex justify-content-center py-3">
+            {{ common.create_navbar(cp.nav_links, title_name) }}
+          </header>
+        </div>
+
+        <div class="row">
+            {% block content %}
+            {% endblock %}
+        </div>
+          
+      </div>
+    </div>
+
+  </body>
+  {% include 'footer.j2' %}
+</html>

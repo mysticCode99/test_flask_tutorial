@@ -1,0 +1,12 @@
+
+{% macro create_navbar ( nav_links, title_name ) -%}
+  <ul class="nav nav-pills">
+  {% for btn in nav_links -%}
+    {% if title_name == btn['name'] -%}
+      <li class="nav-item"><a href="{{ btn['link'] }}" class="nav-link active" aria-current="page">{{ btn['name'] }}</a></li>
+		{% else -%}
+      <li class="nav-item"><a href="{{ btn['link'] }}" class="nav-link">{{ btn['name'] }}</a></li>
+		{% endif -%}
+  {% endfor -%}
+  </ul>
+{% endmacro %}

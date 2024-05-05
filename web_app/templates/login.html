@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form action="/login" method="post">
+
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="alert {{ cat }}">{{ msg }}</div>
+        {% endfor %}
+    
+        <div class="form-group my-3">
+          <label for="formGroupExampleInput">Username</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name="user">
+        </div>
+        <div class="form-group my-3">
+          <label for="formGroupExampleInput2">Password</label>
+          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Password" name="pw">
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
+    </form>
+
+</div>
+{% endblock %}

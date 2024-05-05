@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+          <main class="form-signin m-auto">
+            <!-- <form method="post" action="/feedback"> -->
+            <form method="get" action="/feedback">
+              <h1 class="h3 mb-3 fw-normal">Please leave a comment</h1>
+
+              {% for cat, msg in get_flashed_messages(True) %}
+              <div class="alert {{ cat }}">{{ msg }}</div>
+              {% endfor %}
+          
+              <div class="form-floating">
+                <textarea 
+                  class="form-control" 
+                  placeholder="Leave a comment here" 
+                  id="floatingTextarea2" 
+                  style="height: 100px" 
+                  name="comment" 
+                  type="text"
+                ></textarea>
+                <label for="floatingTextarea2">Comments</label>
+              </div>
+              <button class="btn btn-primary w-100 py-2 my-3" type="submit">Add comment</button>
+            </form>
+
+          </main>
+{% endblock %}

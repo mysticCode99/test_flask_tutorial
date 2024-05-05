@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container py-5">
+		<h1>Home page</h1>
+		<p class="lead">Integrate <a href="https://masonry.desandro.com/">Masonry</a> with the Bootstrap grid system and cards component.</p>
+
+		<hr class="my-5">
+    <ul class="nav nav-underline mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Verbs List</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Add Verb</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Disabled</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="alert {{ cat }}">{{ msg }}</div>
+        {% endfor %}
+        <table class="table caption-top table-hover">
+          <caption>List of Irregular Verbs</caption>
+          <thead>
+            <tr>
+            <th scope="col">Translation</th>
+            <th scope="col">Verb 1</th>
+            <th scope="col">Verb 2</th>
+            <th scope="col">Verb 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+            <tr>
+            <th scope="row">{{ row['translation'] }}</th>
+            <td>{{ row['verb1'] }}</td>
+            <td>{{ row['verb2'] }}</td>
+            <td>{{ row['verb3'] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+        <form action="{{ url_for('add_post') }}" method="post" class="row g-3">
+          <div class="col-auto">
+            <label for="translation" class="visually-hidden">Translation</label>
+            <input type="" class="form-control" id="translation" placeholder="translation" name="translation">
+          </div>
+          <div class="col-auto">
+            <label for="Verb 1" class="visually-hidden">Verb 1</label>
+            <input type="" class="form-control" id="verb1" placeholder="Verb 1" name="verb1">
+          </div>
+          <div class="col-auto">
+            <label for="Verb 2" class="visually-hidden">Verb 2</label>
+            <input type="" class="form-control" id="verb2" placeholder="Verb 2" name="verb2">
+          </div>
+          <div class="col-auto">
+            <label for="Verb 3" class="visually-hidden">Verb 3</label>
+            <input type="" class="form-control" id="verb3" placeholder="Verb 3" name="verb3">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Add Verb</button>
+          </div>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+    </div>
+	</main>
+{% endblock %}
+
